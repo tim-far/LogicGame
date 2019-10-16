@@ -60,9 +60,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\GameHandler.cs" />
-    <Compile Include="Assets\Scripts\Utility.cs" />
-    <Compile Include="Assets\TouchPosition.cs" />
+    <Compile Include="Assets\Source\Elements\Element.cs" />
+    <Compile Include="Assets\Source\Elements\Element_And.cs" />
+    <Compile Include="Assets\Source\Elements\Element_Or.cs" />
+    <Compile Include="Assets\Source\Level\Level.cs" />
+    <Compile Include="Assets\Source\Level\LevelController.cs" />
+    <Compile Include="Assets\Source\Level\LevelHandler.cs" />
+    <Compile Include="Assets\Source\Level\LevelLoader.cs" />
+    <Compile Include="Assets\Source\Utility.cs" />
+    <Compile Include="Assets\VisualizeTouch.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/tfa/OneDrive/Schule/SW-Engineering/LogicGame/LogicGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

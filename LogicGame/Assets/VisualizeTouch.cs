@@ -2,23 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameHandler : MonoBehaviour
+public class VisualizeTouch : MonoBehaviour
 {
     public GameObject ob;
-    public GameObject player;
-
-    private Utility utility;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Started GameHandler");   
+        Debug.Log("Started GameHandler");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.touchCount > 0)
+        if (Input.touchCount > 0)
         {
             Touch t = Input.GetTouch(0);
 
@@ -28,14 +26,14 @@ public class GameHandler : MonoBehaviour
             }
             else if (t.phase == TouchPhase.Ended)
             {
-               Destroy(player);
+                Destroy(player);
             }
             else if (t.phase == TouchPhase.Moved && ob)
             {
                 player.transform.position = getTouchPosition(t.position);
             }
         }
-     
+
     }
 
     Vector2 getTouchPosition(Vector2 touchPosition)
@@ -48,6 +46,7 @@ public class GameHandler : MonoBehaviour
         GameObject c = Instantiate(ob) as GameObject;
         c.name = "test";
         c.transform.position = getTouchPosition(t.position);
-        return c;   
+        Debug.LogFormat("Pos: {0}", getTouchPosition(t.position));
+        return c;
     }
 }
