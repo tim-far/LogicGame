@@ -70,7 +70,7 @@ The goal of this project is making it easy to understand how logic circuits work
 
 ##   2.2 Use Case Diagram
 
-to be determined
+![](Use%20Case%20Diagram.PNG)
 
 # 3 Specific Requirements
 
@@ -148,7 +148,10 @@ not applicable (n/a)
 
 ##  3.10 Licensing Requirements
 
-to be determined
+* Github Student licence
+* Unity license from Visual Studio Community (student account)
+* YouTrack license from DHBW
+
 
 ##  3.11 Legal, Copyright, and Other Notices
 
