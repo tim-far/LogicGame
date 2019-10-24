@@ -2,7 +2,7 @@
 
 <Project LogicGame>
 
-Use Case Specification: <Use-Case Name>
+Use Case Specification: <Use-Case play level>
 
  
 
@@ -10,68 +10,21 @@ Version <1.0>
 
 ## Revision History
 
+
 | Date       | Version | Description                 | Author         |
 |------------|---------|-----------------------------|----------------|
 | 24.10.2019 | 1.0     | first implementation of UCS | Team LogicGame |
+| 24.10.2019 | 1.1     | added mock up               | Team LogicGame |
 |            |         |                             |                |
 |            |         |                             |                |
-|            |         |                             |                |
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
  
 
  
 
 
-Table of Contents
 
-1.          Use-Case Name 
+1.                 play level
 
-1.1      Brief Description     
-
-2.          Flow of Events
-
-2.1      Basic Flow     
-
-2.2      Alternative Flows     
-
-2.2.1       < First Alternative Flow >      
-
-2.2.2       < Second Alternative Flow >      
-
-3.          Special Requirements
-
-3.1      < First Special Requirement >     
-
-4.          Preconditions    
-
-4.1      < Precondition One >     
-
-5.          Postconditions    
-
-5.1      < Postcondition One >     
-
-6.          Extension Points
-
-6.1      <Name of Extension Point>     
-
-
-Use-Case Specification: <Use-Case Name>
-
-1.                  Use-Case Name
-[The following template is provided for a Use-Case Specification, which contains the textual properties of the use case.  This document is used with a requirements management tool, such as Rational RequisitePro, for specifying and marking the requirements within the use-case properties.
-
-The use-case diagrams can be developed in a visual modeling tool, such as Rational Rose.  A use-case report (with all properties) may be generated with Rational SoDA.  For more information, see the tool mentors in the Rational Unified Process.]
 
 1.1               Brief Description
 
