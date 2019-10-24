@@ -85,9 +85,15 @@ User pushes the button to update the inputs of the gates.
 * each gate will compute the output based on its input signals
 * the level controller is going to check whether the level is solved or not
 * If it is not solved the user interface is going to draw the connection lines in a different color
+* the user will know if the level is solved when the stage cleared sign lights up
 * if it is solved the user can click the next level button which will load the next level or leave the level to the main menu
 
+2.1.1 Activity Diagram
 ![](holimoli.jpg)
+
+2.1.2 Mock Up
+
+![](mock%20up%20level.jpg)
 
 2.2               Alternative Flows
 
