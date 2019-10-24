@@ -11,12 +11,65 @@ Version 1.0
 Revision History
 
 
-| **Date**   | **Version** | **Description**             | **Author**     |
-|------------|-------------|-----------------------------|----------------|
-| 17.10.2019 | 0.9         | First Implementation of SRS | Team LogicGame |
-| 24.10.2019 | 1.0         | updated formatting          | Team LogicGame |
-|            |             |                             |                |
-|            |             |                             |                |
+
+| **Date**   | **Version** | **Description**                | **Author**     |
+|------------|-------------|--------------------------------|----------------|
+| 17.10.2019 | 0.9         | First Implementation of SRS    | Team LogicGame |
+| 24.10.2019 | 1.0         | updated formatting             | Team LogicGame |
+| 24.10.2019 | 1.1         | added table of content and UCD | Team LogicGame |
+|            |             |                                |                |
+
+
+### 1.Introduction
+
+#### 1.1 Purpose
+#### 1.2 Scope
+#### 1.3 Definitions, Acronyms, and Abbreviations
+#### 1.4 References
+#### 1.5 Overview
+
+### 2.Overall Description
+
+### 3.Specific Requirements
+
+#### 3.1 Functionality
+
+##### 3.1.1 Simulation of the function of logical gates
+
+##### 3.1.2 Mastering levels to progress
+
+#### 3.2 Usability
+
+#### 3.3 Reliability
+
+#### 3.4 Performance
+
+#### 3.5 Supportability
+
+#### 3.6 Design Constraints
+
+#### 3.7 On-line User Documentation and Help System Requirements
+
+#### 3.8 Purchased Components
+
+#### 3.9 Interfaces
+
+##### 3.9.1 User Interfaces
+
+##### 3.9.2 Hardware Interfaces
+
+##### 3.9.3 Software Interfaces
+
+##### 3.9.4 Communications Interfaces
+
+#### 3.10 Licensing Requirements
+
+##### 3.11 Legal, Copyright, and Other Notices
+
+##### 3.12 Applicable Standards
+
+### 4.Supporting Information
+
 
 
 
@@ -35,18 +88,18 @@ This SRS applies to the entire LogicGame project. The LogicGame is a free androi
 
 ##   1.3 Definitions, Acronyms, and Abbreviations
 
-| **Abbrevation** |   |
-| --- | --- |
-| SRS | Software Requirements Specification |
-| UC | Use Case |
-| n/a | not applicable |
-| tbd | to be determined |
-| MTTR | Mean Time To Repair |
-| FAQ | Frequently asked Questions |
-| Definition |   |
+
+| **Abbrevation**                     | Definition                               |
+|-------------------------------------|------------------------------------------|
+| SRS                                 | Software Requirements Specification      |
+| UC                                  | Use Case                                 |
+| n/a                                 | not applicable                           |
+| tbd                                 | to be determined                         |
+| MTTR                                | Mean Time To Repair                      |
+| FAQ                                 | Frequently asked Questions               |
 | Software Requirements Specification | a document, which captures the complete software requirements for the system, or a portion of the system. |
-| Use Case | a list of actions or event steps, typically defining the interactions between a role (known in the Unified Modeling Language as an actor) and a system, to achieve a goal. |
-| Mean Time to Repair | How long is the system allowed to be out of operation after it has failed? |
+| Use Case                            | a list of actions or event steps, typically defining the interactions between a role (known in the Unified Modeling Language as an actor) and a system, to achieve a goal. |
+| Mean Time to Repair                 | How long is the system allowed to be out of operation after it has failed? |
 
 ## 1.4 References
 
