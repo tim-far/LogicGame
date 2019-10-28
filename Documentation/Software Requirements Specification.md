@@ -1,23 +1,6 @@
-LogicGame
 
-Software Requirements Specification
+# Software Requirements Specification
 
-
-
-
-
-Version 1.0
-
-Revision History
-
-
-
-| **Date**   | **Version** | **Description**                | **Author**     |
-|------------|-------------|--------------------------------|----------------|
-| 17.10.2019 | 0.9         | First Implementation of SRS    | Team LogicGame |
-| 24.10.2019 | 1.0         | updated formatting             | Team LogicGame |
-| 24.10.2019 | 1.1         | added table of content and UCD | Team LogicGame |
-|            |             |                                |                |
 
 
 ### 1.Introduction
@@ -119,7 +102,7 @@ The following chapters are about our vision and perspective, the software requir
 
 ##   2.1 Vision
 
-The goal of this project is making it easy to understand how logic circuits work. The player should learn very fast about the different types of gates such as OR, XOR et cetera. It&#39;s supposed to be educational gaming and therefor it could be used in schools. We would see the project as a complete success if it would motivate children and help them learn about logic circuits and gates.
+Check out our blog and read our first blog post to get to know more about our vison. [https://logicgame775066249.wordpress.com/2019/10/02/introduction-of-our-idea/](https://logicgame775066249.wordpress.com/2019/10/02/introduction-of-our-idea/)
 
 ##   2.2 Use Case Diagram
 
@@ -130,13 +113,13 @@ The goal of this project is making it easy to understand how logic circuits work
 
 ##   3.1 Functionality
 
-### 3.1.1 Simulation of the function of logical gates
+### 3.1.1 select level use case
 
-The LogicGame simulates the function of logical gates like OR, AND, NOR or NAND gates. The purpose of this game is to improve the players knowledge about logic circuits.
+We described that use case in a use case specification document. You can access it here: [https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20select%20level.md](https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20select%20level.md)
 
-###  3.1.2 Mastering levels to progress
+###  3.1.2 play level use case
 
-The LogicGame includes serveral levels which can be solved by the player. The further the player progresses the more difficult the level gets.
+For this use case we also created a use case specification document. You can access it here: [https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20play%20level.md](https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20play%20level.md)
 
 
 ##   3.2 Usability
@@ -169,7 +152,7 @@ The game is created with Unity, which should make it easy to adjust it to new An
 
 ## 3.6 Design Constraints
 
-to be determined
+We wrote a blog post about that. You can access it here: [https://logicgame775066249.wordpress.com/2019/10/15/tools-and-team-roles/](https://logicgame775066249.wordpress.com/2019/10/15/tools-and-team-roles/)
 
 ## 3.7 On-line User Documentation and Help System Requirements
 
