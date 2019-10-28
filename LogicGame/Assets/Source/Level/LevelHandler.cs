@@ -14,7 +14,7 @@ public class LevelHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gridOffsetY = 0.2f * Screen.height;
+        gridOffsetY = 0.05f * Screen.height;
         gridOffsetX = 0.1f * Screen.width;
         gridScaleX = Screen.width / 3.8f;
         gridScaleY = Screen.width / 4;
@@ -35,4 +35,19 @@ public class LevelHandler : MonoBehaviour
         return GetComponent<Camera>().ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0));
     }
 
+    void drawElements(List<Element> elements)
+    {
+        foreach (Element e in elements)
+        {
+            e.texture = Instantiate(elementTexture) as GameObject;
+            e.texture.name = "element" + e.position.x + e.position.y;
+
+            float positionX = gridOffsetX + e.position.x * gridScaleX;
+            float positionY = gridOffsetY + e.position.y * gridScaleY;
+
+            Vector2 position = screenToWorldPoint(new Vector2(positionX, positionY));
+            Debug.LogFormat("Drawing element {0}, {1}", e.texture.name, position);
+            e.texture.transform.position = position;
+        }
+    }
 }

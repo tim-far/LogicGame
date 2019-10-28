@@ -66,7 +66,6 @@
     <Compile Include="Assets\Source\Level\Level.cs" />
     <Compile Include="Assets\Source\Level\LevelController.cs" />
     <Compile Include="Assets\Source\Level\LevelHandler.cs" />
-    <Compile Include="Assets\Source\Level\LevelLoader.cs" />
     <Compile Include="Assets\Source\Utility.cs" />
     <Compile Include="Assets\VisualizeTouch.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
