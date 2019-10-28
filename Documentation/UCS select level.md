@@ -1,26 +1,8 @@
- Artifacts >  Requirements Artifact Set >  Use-Case Model... >  Use Case >  rup_ucspec.htm
+
 
 <Project LogicGame>
 
 Use Case Specification: <Use-Case select level>
-
- 
-
-Version <1.0>
-
-## Revision History
-
-
-| Date       | Version | Description                 | Author         |
-|------------|---------|-----------------------------|----------------|
-| 24.10.2019 | 1.0     | first implementation of UCS | Team LogicGame |
-| 24.10.2019 | 1.1     | added mock up               | Team LogicGame |
-|            |         |                             |                |
-|            |         |                             |                |
- 
-
- 
-
 
 
 1.                 select level
