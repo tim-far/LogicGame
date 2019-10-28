@@ -42,11 +42,11 @@ User pushes the button to update the inputs of the gates.
 * if it is solved the user can click the next level button which will load the next level or leave the level to the main menu
 
 2.1.1 Activity Diagram
-![](holimoli.jpg)
+![](activity%20diagram%20play%level.jpg)
 
 2.1.2 Mock Up
 
-![](mock%20up%20level.jpg)
+![](mock%20up%20play%20level.jpg)
 
 2.2               Alternative Flows
 
