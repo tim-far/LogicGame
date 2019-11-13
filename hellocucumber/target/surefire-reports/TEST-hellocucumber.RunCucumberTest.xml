@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="hellocucumber.RunCucumberTest" time="6.924" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="hellocucumber.RunCucumberTest" time="12.389" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="13.0.1+9"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-13.0.1\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\tfa\Desktop\hellocucumber"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\tfa\OneDrive\Schule\SW-Engineering\LogicGame\hellocucumber"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="DE"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\tfa\Desktop\hellocucumber"/>
+    <property name="user.dir" value="C:\Users\tfa\OneDrive\Schule\SW-Engineering\LogicGame\hellocucumber"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="13.0.1+9"/>
     <property name="os.arch" value="amd64"/>
@@ -60,5 +60,5 @@
     <property name="sun.stdout.encoding" value="cp850"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Gmail Login" name="Login" time="6.924"/>
+  <testcase classname="Gmail Login" name="Login" time="12.389"/>
 </testsuite>
