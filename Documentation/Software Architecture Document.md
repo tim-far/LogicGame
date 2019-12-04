@@ -1,48 +1,5 @@
 ﻿# Software Architecture Document  
 
-## Table of Contents 
-
-1.Introduction2 
-
-1.1Purpose2 
-
-1.2Scope2 
-
-1.3Definitions, Acronyms, and Abbreviations2 
-
-1.4References2 
-
-1.5Overview2 
-
-2.Architectural Representation2 
-
-3.Architectural Goals and Constraints2 
-
-4.Use-Case View2 
-
-4.1Use-Case Realizations2 
-
-5.Logical View2 
-
-5.1Overview2 
-
-5.2Architecturally Significant Design Packages2 
-
-6.Process View2 
-
-7.Deployment View2 
-
-8.Implementation View2 
-
-8.1Overview2 
-
-8.2Layers2 
-
-9.Data View (optional)2 
-
-10.Size and Performance2 
-
-11.Quality2 
 
 
 ## Introduction 
@@ -88,28 +45,28 @@ This document contains the goals and constraints as well as the logical, deploym
 
 ## Architectural Representation  
 
-n/a
+Every object is a separate entity and therefore no typical architecture is represented by Unity. The used architecture is the component architecture. The architecture with the most similarities for one entity would be MVC. The code represents the controller and the in-game objects can be compared to the view in MVC.
 
 ## Architectural Goals and Constraints  
 
-n/a
+The final goal for this game project would be having multiple levels that can be selected and played. We want to have an overview where you can select the level.   
+Every level is supposed to be different. The higher the level the more difficult it should be. 
 
 ## Use-Case View  
 
 ![](Use%20Case%20Diagram.PNG)
 
-]
 
 ### Use-Case Realizations 
 
-tbd
+n/a
 
  
 ## Logical View  
 
 ### Overview 
 
-![](Class%20Diagram.PNG)
+![](component%20architecture.png)
 
 
 
@@ -120,3 +77,7 @@ n/a
 ## Deployment View  
 
 tbd
+
+## Implementation View
+
+![](Class%20Diagram.PNG)
