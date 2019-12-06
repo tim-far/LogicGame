@@ -33,13 +33,13 @@ public class LevelSelector : MonoBehaviour
         // PageSwiper swiper = levelHolder.AddComponent<PageSwiper>();
         // swiper.totalPages = numberOfPanels;
 
-        for (int i = 1; i <= numberOfPanels; i++)
+        for (int i = 0; i < numberOfPanels; i++)
         {
             GameObject panel = Instantiate(panelClone) as GameObject;
             panel.transform.SetParent(thisCanvas.transform, false);
             panel.transform.SetParent(levelHolder.transform);
             panel.name = "Page-" + i;
-            panel.GetComponent<RectTransform>().localPosition = new Vector2(panelDimensions.width * (i - 1), 0);
+            panel.GetComponent<RectTransform>().localPosition = new Vector2(panelDimensions.width * i, 0);
             SetUpGrid(panel);
             int numberOfIcons = i == numberOfPanels ? numberOfLevels - currentLevelCount : amountPerPage;
             LoadIcons(numberOfIcons, panel);
@@ -55,13 +55,13 @@ public class LevelSelector : MonoBehaviour
     }
     void LoadIcons(int numberOfIcons, GameObject parentObject)
     {
-        for (int i = 1; i <= numberOfIcons; i++)
+        for (int i = 0; i < numberOfIcons; i++)
         {
             currentLevelCount++;
             GameObject icon = Instantiate(levelIcon) as GameObject;
             icon.transform.SetParent(thisCanvas.transform, false);
             icon.transform.SetParent(parentObject.transform);
-            icon.name = "Level " + i;
+            icon.name = "lvl" + currentLevelCount;
             icon.GetComponentInChildren<TextMeshProUGUI>().SetText("Level " + currentLevelCount);
         }
     }

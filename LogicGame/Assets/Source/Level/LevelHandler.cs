@@ -10,6 +10,7 @@ public class LevelHandler : MonoBehaviour
     private float gridScaleY;
 
     public GameObject elementTexture;
+    public static Level currentLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,10 @@ public class LevelHandler : MonoBehaviour
         gridScaleX = Screen.width / 3.8f;
         gridScaleY = Screen.width / 4;
 
-        LevelController.initialize();
-        LevelController.loadLevel("Assets/Levels/test.lvl");
-        drawElements(LevelController.currentLevel.elements);
+        currentLevel = new Level();
+        currentLevel.loadElementsFromFile(CrossSceneInfo.RequestedLevel);
+        currentLevel.connectElements();
+        drawElements(currentLevel.elements);
     }
 
     // Update is called once per frame
