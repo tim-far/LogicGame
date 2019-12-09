@@ -5,28 +5,30 @@
 Use Case Specification: <Use-Case load level>
 
 
-1.                 draw level
+1.                 load level
 
 
 1.1               Brief Description
 
-The level which is defined in level-file.txt is going to be loaded by the unity engine. 
-The gates specified in the level-file are drawn in the correct position with their correct attributes on the level scene. 
+User selects the level that's being played. 
 
 2.                  Flow of Events
 2.1               Basic Flow
 * the user clicks on a level which is listed on the level select screen
 * the chosen level will be initialized based on the unique ID shown in the level selector
-* the chosen level is to be drawn on the level scene by the unity engine
-* see also UC: draw level
+* after that the level selector will check if the level is already unlocked
+* if it is not unlocked the user cannot play and the game stays in the level selector
+* if it is unlocked the game will load the level from file
+* the level is done initializing by loading the gates and connections and the UI will switch to the level screen
+
 
 2.1.1 Activity Diagram
 
-!!!!!!!!!!!! MUSS NOCH EINGETRAGEN WERDEN !!!!!!!!!!!!
+![](activity%20diagram%20load%20level.png)
 
 2.1.2 Mock Up
 
-n/a
+![](mock%20up%20select%20level.jpg)
 
 2.2               Alternative Flows
 
@@ -40,13 +42,9 @@ n/a
 4.                  Preconditions
 
 
-4.1             Start Game  
+4.1               Level selector
  
 The game has to be launched. 
-
-4.2		Select Level
-
-Take a look at the select level UCS to get more information.
 
 
 5.                  Postconditions

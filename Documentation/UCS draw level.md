@@ -21,7 +21,7 @@ The gates specified in the level-file are drawn in the correct position with the
 
 2.1.1 Activity Diagram
 
-!!!!!!!!!!!! MUSS NOCH EINGETRAGEN WERDEN !!!!!!!!!!!!
+![](activity%20diagram%20draw%20level.png)
 
 2.1.2 Mock Up
 
