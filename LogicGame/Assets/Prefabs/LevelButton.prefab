@@ -132,13 +132,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 36.623444, z: -9.825775, w: 35.730133}
   m_textInfo:
     textComponent: {fileID: 2177280183567584763}
-    characterCount: 0
+    characterCount: 9
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.5188679, g: 0.16398183, b: 0.16398183, a: 0}
     m_HighlightedColor: {r: 1, g: 0.65038824, b: 0, a: 0}
-    m_PressedColor: {r: 0, g: 1, b: 0.15949917, a: 1}
+    m_PressedColor: {r: 0, g: 1, b: 0.15949917, a: 0}
     m_DisabledColor: {r: 0, g: 1, b: 0.023376703, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 64571d20de7a6754b97b7dea593603a9, type: 3}
+  m_Texture: {fileID: 2800000, guid: dbb37e47c43d86f4580474ae38ce64fe, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
