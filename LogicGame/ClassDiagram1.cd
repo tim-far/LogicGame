@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LevelOnClick">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Prefabs\LevelOnClick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelSelector">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAAACAECAAACAAAAAAAAAABAgAgAEABQAAAAAA=</HashCode>
+      <FileName>Assets\Prefabs\LevelSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PageSwiper">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAIBAEAAAACAAAAAAIAAAAgAAAQI=</HashCode>
+      <FileName>Assets\Prefabs\PageSwiper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Element">
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAIAAACAABAhCAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Elements\Element.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Element_And">
+    <Position X="5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Elements\Element_And.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Element_Or">
+    <Position X="5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Elements\Element_Or.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAEAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Level\Level.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelHandler">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgACAAAAAAAEAAAAEAEAjAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Level\LevelHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ElementType">
+    <Position X="1" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Source\Elements\Element.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

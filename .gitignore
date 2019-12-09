@@ -1,5 +1,3 @@
-/LogicGame/Logs
+.vs
 /LogicGame/obj
-/LogicGame/.vs
-/LogicGame/Library
-*.meta
+/LogicGame/Temp

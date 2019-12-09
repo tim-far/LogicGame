@@ -265,6 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 837020000}
   - component: {fileID: 837020001}
+  - component: {fileID: 837020002}
   m_Layer: 0
   m_Name: PanelHolder
   m_TagString: Untagged
@@ -299,8 +300,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef3519cc0905134f9f4f9e2fa867e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  percentThreshold: 0.1
-  easing: 0.3
+--- !u!114 &837020002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837019999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74e681fb8e883747adb6fd5d04e78cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  percentThreshold: 0.2
+  easing: 0.5
   totalPages: 1
 --- !u!1 &1008914297
 GameObject:
@@ -314,7 +327,7 @@ GameObject:
   - component: {fileID: 1008914300}
   - component: {fileID: 1008914299}
   - component: {fileID: 1008914298}
-  - component: {fileID: 1008914301}
+  - component: {fileID: 1008914302}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -389,25 +402,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1008914301
+--- !u!114 &1008914302
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 6291261787643549547, guid: 0c7316aba4489a14bbe6c2d1fb786e4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 5837532455949174234}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008914297}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b967ede7fdba47c4890d22d3bbdee29f, type: 3}
+  m_Script: {fileID: 11500000, guid: cee71aa6a6a6dd8489b991a5d28f8237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelHolder: {fileID: 1258791956}
-  levelIcon: {fileID: 166798236196800965, guid: 7241c63f46ad79a43942a6d7f6ff5841,
+  levelIcon: {fileID: 6475935105183665670, guid: 1912a5d146e32194696ac9e4242de18f,
     type: 3}
   thisCanvas: {fileID: 837019999}
   numberOfLevels: 50
-  iconSpacing: {x: 20, y: 20}
+  iconSpacing: {x: 0, y: 0}
 --- !u!1 &1258791956
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,5 +669,6 @@ PrefabInstance:
       propertyPath: iconSpacing.x
       value: 20
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 0c7316aba4489a14bbe6c2d1fb786e4d, type: 3}
