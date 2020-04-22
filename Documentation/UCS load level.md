@@ -24,7 +24,7 @@ User selects the level that's being played.
 
 2.1.1 Activity Diagram
 
-![](activity%20diagram%20load%20level.png)
+![](activity%20diagram%20load%20level.jpg)
 
 2.1.2 Mock Up
 
