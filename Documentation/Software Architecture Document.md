@@ -1,4 +1,4 @@
-﻿# Software Architecture Document  
+# Software Architecture Document  
 
 
 
@@ -32,10 +32,8 @@ This document describes the technical architecture of the LogicGame project, inc
 |-------------------------------|------------------------------------------|
 | SRS                           | https://github.com/tim-far/LogicGame/blob/master/Documentation/Software%20Requirements%20Specification.md |
 | UCS select level              | https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20select%20level.md |
-| UCS play level                | https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20play%20level.md |
 | UCS draw level		| https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20draw%20level.md	|
 | UCS load level		| https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20load%20level.md  |
-| activity diagram play level   | https://github.com/tim-far/LogicGame/blob/master/Documentation/activity%20diagram%20play%20level.jpg |
 | activity diagram select level | https://github.com/tim-far/LogicGame/blob/master/Documentation/activity%20diagram%20select%20level.jpg |
 | mock up play level            | https://github.com/tim-far/LogicGame/blob/master/Documentation/mock%20up%20play%20level.jpg |
 | mock up select level          | https://github.com/tim-far/LogicGame/blob/master/Documentation/mock%20up%20select%20level.jpg |
