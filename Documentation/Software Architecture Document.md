@@ -31,10 +31,9 @@ This document describes the technical architecture of the LogicGame project, inc
 | Title                         | link                                     |
 |-------------------------------|------------------------------------------|
 | SRS                           | https://github.com/tim-far/LogicGame/blob/master/Documentation/Software%20Requirements%20Specification.md |
-| UCS select level              | https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20select%20level.md |
+| UCS draw level selector              | https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20draw%20level%20selector.md |
 | UCS draw level		| https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20draw%20level.md	|
 | UCS load level		| https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20load%20level.md  |
-| activity diagram select level | https://github.com/tim-far/LogicGame/blob/master/Documentation/activity%20diagram%20select%20level.jpg |
 | mock up play level            | https://github.com/tim-far/LogicGame/blob/master/Documentation/mock%20up%20play%20level.jpg |
 | mock up select level          | https://github.com/tim-far/LogicGame/blob/master/Documentation/mock%20up%20select%20level.jpg |
 | mock up draw level            | https://github.com/tim-far/LogicGame/blob/master/Documentation/mock%20up%20play%20level.jpg	|
