@@ -3,59 +3,6 @@
 
 
 
-### 1.Introduction
-
-#### 1.1 Purpose
-#### 1.2 Scope
-#### 1.3 Definitions, Acronyms, and Abbreviations
-#### 1.4 References
-#### 1.5 Overview
-
-### 2.Overall Description
-
-### 3.Specific Requirements
-
-#### 3.1 Functionality
-
-##### 3.1.1 Simulation of the function of logical gates
-
-##### 3.1.2 Mastering levels to progress
-
-#### 3.2 Usability
-
-#### 3.3 Reliability
-
-#### 3.4 Performance
-
-#### 3.5 Supportability
-
-#### 3.6 Design Constraints
-
-#### 3.7 On-line User Documentation and Help System Requirements
-
-#### 3.8 Purchased Components
-
-#### 3.9 Interfaces
-
-##### 3.9.1 User Interfaces
-
-##### 3.9.2 Hardware Interfaces
-
-##### 3.9.3 Software Interfaces
-
-##### 3.9.4 Communications Interfaces
-
-#### 3.10 Licensing Requirements
-
-##### 3.11 Legal, Copyright, and Other Notices
-
-##### 3.12 Applicable Standards
-
-### 4.Supporting Information
-
-
-
-
 # 1. Introduction
 
 
@@ -105,22 +52,29 @@ The following chapters are about our vision and perspective, the software requir
 Check out our blog and read our first blog post to get to know more about our vison. [https://logicgame775066249.wordpress.com/2019/10/02/introduction-of-our-idea/](https://logicgame775066249.wordpress.com/2019/10/02/introduction-of-our-idea/)
 
 ##   2.2 Use Case Diagram
-
+https://github.com/tim-far/LogicGame/blob/master/Documentation/Use%20Case%20Diagram.PNG
 ![](Use%20Case%20Diagram.PNG)
+
+## 2.3 Used tools (and team roles)
+
+[https://logicgame775066249.wordpress.com/2019/10/15/tools-and-team-roles/](https://logicgame775066249.wordpress.com/2019/10/15/tools-and-team-roles/)
 
 # 3 Specific Requirements
 
 
 ##   3.1 Functionality
 
-### 3.1.1 select level use case
+### 3.1.1 load level use case
 
-We described that use case in a use case specification document. You can access it here: [https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20select%20level.md](https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20select%20level.md)
+We described that use case in a use case specification document. You can access it here: [https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20load%20level.md](https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20load%20level.md)
 
-###  3.1.2 play level use case
+###  3.1.2 draw level use case
 
-For this use case we also created a use case specification document. You can access it here: [https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20play%20level.md](https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20play%20level.md)
+For this use case we also created a use case specification document. You can access it here: [https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20draw%20level.md](https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20draw%20level.md)
 
+###  3.1.3 draw level selector use case
+
+For this use case we also created a use case specification document. You can access it here: [https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20draw%20level%20selector.md](https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20draw%20level%20selector.md)
 
 ##   3.2 Usability
 
