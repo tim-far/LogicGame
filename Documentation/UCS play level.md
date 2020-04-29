@@ -26,6 +26,9 @@ User pushes the button to update the inputs of the gates.
 2.1.1 Activity Diagram
 
 
+![](AD%20Play%20Level.png)
+
+
 2.1.2 Mock Up
 
 ![](mock%20up%20play%20level.jpg)
