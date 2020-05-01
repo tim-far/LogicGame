@@ -57,4 +57,18 @@ Take a look at the play level Use Case Specification to get more information.
 6.                  Extension Points
 
 n/a
+
+7. Function Points
+
+
+![](FP%20for%20UC%20load%20level.png)
+
+
+![](FP%20for%20entire%20Project.png)
+
+(Complexity Adjustment Table stays for every use case the same)
+
+![](Result%20FP%20for%20UC%20load%20level.png)
+
+
  

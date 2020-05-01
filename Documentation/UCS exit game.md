@@ -58,3 +58,13 @@ Android kills the app process.
 
 n/a
  
+7. Function Points
+
+![](FP%20for%20UC%20exit%20game.png)
+
+ 
+![](FP%20for%20entire%20Project.png)
+
+(Complexity Adjustment Table stays for every use case the same) 
+
+![](Result%20FP%20for%20UC%20exit%20game.png)

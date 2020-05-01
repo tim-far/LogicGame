@@ -52,4 +52,14 @@ n/a
 6.                  Extension Points
 
 n/a
- 
+
+7. Function Points
+
+![](FP%20for%20UC%20draw%20level%20selector.png)
+
+
+![](FP%20for%20entire%20Project.png)
+
+(Complexity Adjustment Table stays for every use case the same) 
+
+![](Result%20FP%20for%20UC%20draw%20level%20selector.png)
