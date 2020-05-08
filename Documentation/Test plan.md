@@ -4,56 +4,38 @@
 ## 1.	Introduction
 ### 1.1	Purpose
 The purpose of the Iteration Test Plan is to gather all of the information necessary to plan and control the test effort for a given iteration. 
-It describes the approach to testing the software.
-This Test Plan for vnv supports the following objectives:
+It describes the approach of testing the software.
+This Test Plan supports the following objectives:
 -	Identifies the items that should be targeted by the tests.
 -	Identifies the motivation for and ideas behind the test areas to be covered.
 -	Outlines the testing approach that will be used.
 -	Identifies the required resources and provides an estimate of the test efforts.
 
 ### 1.2	Scope
-This document describes the used tests, as they are unittests and functionality testing.
+This document describes the unit tests and their results.
 
 ### 1.3	Intended Audience
-This document is meant for internal use primarily.
+This document is mainly meant for internal use.
 
 ### 1.4	Document Terminology and Acronyms
 - **SRS**	Software Requirements Specification
-- **vnv**	verleihen, Dienstleistungen, verschenken
 - **n/a**	not applicable
 - **tbd**	to be determined
 - **AAI**	Authentication and Authorization Infrastructure
 
 ### 1.5	 References
-- [GitHub](https://github.com/WMerk/VnVProject)
-- [Blog](https://vnvproject.wordpress.com/)
-- [Overall Use case diagram](https://github.com/WMerk/VnVProject/blob/master/doc/use%20cases/SRS.png)
-- [Software Requirements Specification](SRS.MD)
-- [Software Architecture Document](SAD.MD)
-- [Function points](https://github.com/WMerk/vnvDoc/blob/master/doc/FP.pdf)
-- [UC Delete friend](UC_DeleteFriend.MD)
-- [UC Accept friend requests](UC_AcceptFriendRequest.MD)
-- [UC List received friend requests](UC_ListReceivedFriendRequests.MD)
-- [UC List sent friend requests](UC_ListSentFriendRequests.MD)
-- [UC Add friend](UC_AddFriend.MD)
-- [UC ChangePassword](UC_ChangePassword.MD)
-- [UC Create new request](UC_CreateNewRequest.MD)
-- [UC Create new offer](UC_CreateNewOffer.MD)
-- [UC List requests](UC_ListRequests.MD)
-- [UC List offers](UC_ListOffers.MD)
-- [UC Search for offers or requests](UC_SearchOffersRequests.MD)
-- [UC Edit status of offer / request](UC_EditStatus.MD)
-- [UC DeleteAccount](UC_DeleteAccount.MD)
-- [UC EditProfile](UC_EditProfile.MD)
-- [UC Login](UC_Login.MD)
-- [UC Register](UC_Register.MD)
-- [UC Register/Login with Google](UC_RegisterLoginGoogle.MD)
+- [GitHub](https://github.com/tim-far/LogicGame)
+- [Blog](https://logicgame775066249.wordpress.com/)
+- [Overall Use case diagram](https://github.com/tim-far/LogicGame/blob/master/Documentation/Overall%20UseCase%20Semester%204.png)
+- [Software Requirements Specification](https://github.com/tim-far/LogicGame/blob/master/Documentation/Software%20Requirements%20Specification.md)
+- [Software Architecture Document](https://github.com/tim-far/LogicGame/blob/master/Documentation/Software%20Architecture%20Document.md)
+
 
 ## 2.	Evaluation Mission and Test Motivation
 ### 2.1	Background
-By testing our project, we make sure that all changes to the sourcecode do not break the functionality. Also by integrating the test process in our deployment process, we make sure that only working versions of our project getting deployed. So the web application is always available.
+By testing our project, we make sure that all changes to the source code do not break the functionality. Also by integrating the test process in our deployment process, we make sure that only working versions of our project getting deployed. 
 ### 2.2	Evaluation Mission
-Our motivation in implementing tests came at an early stage to recognize the need for errors and to ensure the functionality and thus the outstanding quality of the software.
+Our motivation in implementing tests came at an early stage to recognize the errors and to ensure the functionality and thus the outstanding quality of the software.
 ### 2.3	Test Motivators
 Our testing is motivated by 
 - quality risks 
@@ -62,30 +44,24 @@ Our testing is motivated by
 - functional requirements
 
 ## 3.	Target Test Items
-The listing below identifies those test items (software, hardware, and supporting product elements) that have been identified as targets for testing. This list represents what items will be tested. 
+The listing below identifies those test items that have been identified as targets for testing. This list represents what items will be tested. 
 
 Items for Testing:
-- java backend
-- web frontend
-- database operations
+- buttons in UC draw level selector
+- element output in UC play level
+- number and position of element loaded from file in UC load level
 
 ## 4.	Outline of Planned Tests
 ### 4.1	Outline of Test Inclusions
-Unit testing the Java backend, functional testing of the Web frondend and Database Integrity Testing
+All of the tests are unit tests. 
 ### 4.2	Outline of Other Candidates for Potential Inclusion
-Stress testing the application, unit testing the frontend or profile testing the java backend might be potential test cases but these are not in scope of our testing process yet.
+Stress testing the application, function tests of the buttons are potential test cases but these are not in scope of our testing process yet.
 
 ## 5.	Test Approach
 ### 5.1	Testing Techniques and Types
 #### 5.1.1	Function and Database Integrity Testing
-|| |
-|---|---|
-|Technique Objective  	| Exercise target-of-test functionality, including navigation, data entry, processing, and retrieval to observe and log target behavior. |
-|Technique 		|  Execute each use-case scenario’s individual use-case flows or functions and features, using valid and invalid data, to verify that: the expected results occur when valid data is used; the appropriate error or warning messages are displayed when invalid data is used; each business rule is properly applied. Selenium can simulate all user interactions like clicks, swipes and more. |
-|Oracles 		|  user enter valid data, for example a valid username and a valid password   |
-|Required Tools 	| Selenium + Cucumber	 |
-|Success Criteria	|    successful senarios         |
-|Special Considerations	|     -          |
+
+n/a
 
 #### 5.1.2	Unit Testing
 || |
@@ -125,20 +101,20 @@ n/a
 n/a
 
 #### 5.1.12	Installation Testing
-An installation test was successfully done by [Mathinator](https://vnvproject.wordpress.com/2017/06/12/continuous-integration/).
+
 
 ## 6.	Entry and Exit Criteria
 ### 6.1	Test Plan
 #### 6.1.1	Test Plan Entry Criteria
-Building a new version of the software will execute the testprocess.
+Building a new version of the software will execute the test process.
 #### 6.1.2	Test Plan Exit Criteria
-When all tests pass without throwing an exception .
+When all tests pass without throwing an exception.
 
 ## 7.	Deliverables
 ### 7.1	Test Evaluation Summaries
-https://sonarcloud.io/component_measures/domain/Coverage?id=de.dhbw.ka.vnv%3Avnvproject
+
 ### 7.2	Reporting on Test Coverage
-https://sonarcloud.io/component_measures/metric/coverage/tree?id=de.dhbw.ka.vnv%3Avnvproject
+
 ### 7.3	Perceived Quality Reports
 n/a
 ### 7.4	Incident Logs and Change Requests
@@ -148,8 +124,7 @@ n/a
 ### 7.6	Additional Work Products
 n/a
 #### 7.6.1	Detailed Test Results
-When executing functiontests cucumber will atomaticly generate a [HTML test report](https://cdn.rawgit.com/WMerk/vnv/master/src/test/features/Reports/cucumber-htmlreport/index.html).
-for Unittest testreports see section 7.2.
+
 #### 7.6.2	Additional Automated Functional Test Scripts
 n/a
 #### 7.6.3	Test Guidelines
@@ -157,22 +132,17 @@ n/a
 #### 7.6.4	Traceability Matrices
 n/a
 ## 8.	Testing Workflow
-At the moment tests are automatically ran before deployment on the server. The application is build using maven. Building the application with maven install will run all (feature tests and) unittest and only build if the tests complete. This can be triggered by a commit to github.
+At the moment tests are manually ran before deployment. The tests are built using unity. In unity you need to manually execute the test. If the test is successful the new build will be committed and pushed into github. 
 
 ## 9.	Environmental Needs
-[This section presents the non-human resources required for the Test Plan.]
+
 ### 9.1	Base System Hardware
 The following table sets forth the system resources for the test effort presented in this Test Plan.
 
-| Resource | Quantity | Name and Type |
+| Resource | Quantity | Type |
 |---|---|---|
-| Integration Server | 1 | Debian Server |
-| Server Name |  	| dhbw-projekt.data.kit.edu |
-| Development Server	| 1 | <Server>	|
-| Server Name |  | localhost |
-| Database | 2 | <Name>	|
-| Docker builds Server | 1 | Debian Server |
-| Server Name |  	| dhbw-projekt.data.kit.edu |
+| Workstation | 3 | Windows 10 with Unity 2018 |
+| mobile Phone | 1 | Samsung Galaxy S9 with Android 9 |
 
 ### 9.2	Base Software Elements in the Test Environment
 The following base software elements are required in the test environment for this Test Plan.
@@ -180,19 +150,17 @@ The following base software elements are required in the test environment for th
 | Software Element Name | Version | Type and Other Notes |
 |---|---|---|
 | Windows | 10 | Operating System |
-| Chrome |  58	| Internet Browser |
-| Chromedriver |  11 | Application |
+| Unity |  2018	| Game Engine |
+| Android |  9 | Operating System |
 
 ### 9.3	Productivity and Support Tools
 The following tools will be employed to support the test process for this Test Plan.
 
 | Tool Category or Type | Tool Brand Name | Vendor or In-house | Version |
 |---|---|---|---|
-| Test Management | Intellij | JetBrains | 17.2 |
+| Test Management | Unity | Unity | 2018 |
 | Project Management | YouTrack | JetBrains |  |
-| DBMS tools |	 | 	 | 	 |
-| Image builder | Docker | Docker | 	 |
-| Image hoster | Docker Hub | Docker | 	 |
+| Filehosting | Github | Github | 	 |
 
 ## 10.	Responsibilities, Staffing, and Training Needs
 ### 10.1	People and Roles
@@ -207,7 +175,6 @@ Human Resources
 | Test Designer | 1 | Defines the technical approach to the implementation of the test effort. <br> Responsibilities include:<br> define test approach<br> define test automation architecture<br> verify test techniques<br> define testability elements<br> structure test implementation|
 | Tester | 1 |	Implements and executes the tests.<br> Responsibilities include:<br> implement tests and test suites<br> execute test suites<br> log results<br> analyze and recover from test failures<br> document incidents|
 | Test System Administrator | 1 | Ensures test environment and assets are managed and maintained.<br> Responsibilities include:<br> 	administer test management system<br> install and support access to, and recovery of, test environment configurations and test labs | 
-| Database Administrator, Database Manager | 1 | Ensures test data (database) environment and assets are managed and maintained.<br> Responsibilities include:<br> support the administration of test data and test beds (database). |
 | Implementer | 3| Implements and unit tests the test classes and test packages.<br> Responsibilities include:<br> creates the test components required to support testability requirements as defined by the designer |
 
 ### 10.2	Staffing and Training Needs
@@ -216,15 +183,6 @@ n/a
 
 | Milestone | Planned Start Date | Actual Start Date | Planned End Date | Actual End Date |
 |---|---|---|---|---|
-| Have Unit Tests | 01.11.2016 | 03.11.2016 | 14.11.2016 | 14.11.2016 |
-| Have Integration Tests | 01.11.2016 | 010.11.2016 | 14.11.2016 | 14.11.2016 |
-| > 20% Test Coverage | 14.11.2016 | 14.11.2016 | 20.11.2016 | 20.11.2016 |
-| Tests integrated in CI | 06.05.2017 | 06.05.2017 | 12.06.2017 | 12.06.2017 |
+| Have Unit Tests | 08.05.2020 | 08.05.2020 | 08.05.2020 | 08.05.2020 |
+| > 40% Test Coverage | 08.05.2020 | 08.05.2020 | 08.05.2020 | 08.05.2020 |
 | Iteration ends |  | |  | |
-		
-
-		
-		
-		
-		
-[vnv]: https://raw.githubusercontent.com/WMerk/vnvDoc/master/logo/logo_wide_big.png "vnv logo"
