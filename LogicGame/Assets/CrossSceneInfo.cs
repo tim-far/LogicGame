@@ -1,5 +1,15 @@
 ﻿
-public static class CrossSceneInfo
+public class CrossSceneInfo
 {
-    public static string RequestedLevel = "Assets/Levels/lvl1.lvl";
+    private static CrossSceneInfo instance;
+    public static CrossSceneInfo getInstance()
+    {
+        if (instance == null)
+        {
+            instance = new CrossSceneInfo();
+        }
+        return instance;
+    }
+
+    public string RequestedLevel = "Assets/Levels/lvl1.lvl";
 };

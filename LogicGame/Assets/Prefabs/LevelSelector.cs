@@ -16,6 +16,17 @@ public class LevelSelector : MonoBehaviour
     private int amountPerPage;
     private int currentLevelCount;
 
+
+    private static LevelSelector instance;
+    public LevelSelector getInstance()
+    {
+        if (instance == null)
+        {
+            instance = new LevelSelector();
+        }
+        return instance;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

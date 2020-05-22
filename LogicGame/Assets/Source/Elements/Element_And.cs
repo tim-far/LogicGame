@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Element_And : Element
 {
+    private static Element_And instance;
+
+
+    public Element_And getInstance(Vector2Int position, Vector3Int connectedTo, int numInputs)
+    {
+        if (instance == null)
+            instance = new Element_And(position, connectedTo, numInputs);
+        return instance;
+    }
+
     public Element_And(Vector2Int position, Vector3Int connectedTo, int numInputs)
     {
         type = ElementType.ELEMENT_AND;

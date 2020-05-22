@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Element_Or : Element
 {
+    private static Element_Or instance;
+
+
+    public Element_Or getInstance(Vector2Int position, Vector3Int connectedTo, int numInputs)
+    {
+        if (instance == null)
+            instance = new Element_Or(position, connectedTo, numInputs);
+        return instance;
+    }
+
     public Element_Or(Vector2Int position, Vector3Int connectedTo, int numInputs)
     {
         type = ElementType.ELEMENT_OR;

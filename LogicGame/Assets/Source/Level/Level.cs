@@ -5,6 +5,14 @@ using System.Text.RegularExpressions;
 
 public class Level
 {
+    private static Level instance;
+    public static Level getInstance()
+    {
+        if (instance == null)
+            instance = new Level();
+        return instance;
+    }
+
     public List<Element> elements;
 
     public void loadElementsFromFile(string path)
