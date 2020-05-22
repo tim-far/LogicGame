@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PageSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
 {
+    private int singletonBranchTest;
     private Vector3 panelLocation;
     public float percentThreshold = 0.2f;
     public float easing = 0.5f;
