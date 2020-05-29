@@ -11,6 +11,7 @@ public class LevelHandler : MonoBehaviour
     private static float gridScaleY;
 
     public GameObject elementTexture;
+    public Texture2D textureSize;
     public Material lineMaterial;
     public static Level currentLevel;
 
@@ -19,15 +20,22 @@ public class LevelHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        connectionRenderer = new ConnectionRenderer(lineMaterial);
+        if (!textureSize)
+        {
+            Debug.LogError("Please set the textureSize Object first!");
+            return;
+        }
+        CrossSceneInfo.textureSize = textureSize;
 
-        gridOffsetY = 0.05f * Screen.height;
-        gridOffsetX = 0.1f * Screen.width;
-        gridScaleX = Screen.width / 3.8f;
-        gridScaleY = Screen.width / 4;
+        connectionRenderer = new ConnectionRenderer(lineMaterial);
 
         currentLevel = new Level();
         currentLevel.loadElementsFromFile(CrossSceneInfo.RequestedLevel);
+        gridOffsetY = 0.05f * Screen.height;
+        gridOffsetX = 0.1f * Screen.width;
+        gridScaleX = Screen.width / Level.dimensions.x;
+        gridScaleY = Screen.width / Level.dimensions.y;
+
         currentLevel.connectElements();
         drawElements(currentLevel.elements);
         drawConnections(currentLevel.elements);
@@ -62,30 +70,41 @@ public class LevelHandler : MonoBehaviour
     {
         foreach (Element e in elements)
         {
-            e.texture = Instantiate(elementTexture) as GameObject;
-            e.texture.name = "element" + e.position.x + e.position.y;
+            e.obj = Instantiate(elementTexture) as GameObject;
+            e.obj.name = "element" + e.position.x + e.position.y;
 
             Vector2 position = screenToWorldPoint(calculateGridPos(e.position));
-            Debug.LogFormat("Drawing element {0}, {1}", e.texture.name, position);
-            e.texture.transform.position = position;
+            Debug.LogFormat("Drawing element {0}, {1}, {2}, {3}", e.obj.name, position, textureSize.width, textureSize.height);
+            e.obj.transform.position = position;
         }
     }
 
-    public static Vector2 calculateGridPos(Vector2 position)
+    public static Vector2 calculateGridPos(Vector2Int position)
     {
         float gridPositionX = gridOffsetX + position.x * gridScaleX;
         float gridPositionY = gridOffsetY + (position.y + 1) * gridScaleY;
         return new Vector2(gridPositionX, gridPositionY);
     }
 
-    private int getElementsAtY(int y, List<Element> elements)
+    public static int getElementsAtY(int y)
     {
         int result = 0;
-        foreach (Element e in elements)
+        foreach (Element e in currentLevel.elements)
         {
             if (e.position.y == y)
                 result++;
         }
         return result;
     }
+
+    public static Element getElement(Vector2Int pos)
+    {
+        foreach (Element e in currentLevel.elements)
+        {
+            if (e.position == pos)
+                return e;
+        }
+        return new Element_And(new Vector2Int(10, 10), new Vector3Int(10, 10, 10), 10);
+    }
+
 }

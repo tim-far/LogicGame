@@ -6,9 +6,11 @@ using System.Text.RegularExpressions;
 public class Level
 {
     public List<Element> elements;
+    public static Vector2 dimensions; // number of rows, std::max(elements in row, old)
 
     public void loadElementsFromFile(string path)
     {
+        dimensions = new Vector2();
         elements = new List<Element>();
         // Read The file into a String array
         string[] lines = System.IO.File.ReadAllLines(path);
@@ -48,6 +50,10 @@ public class Level
                     {
                         Debug.LogErrorFormat("'{0}' is not a valid element. in File '{1}', Line {2}", strCurrentElement, path, curLine);
                     }
+                    if (curLine + 1 > dimensions.y)
+                        dimensions.y = curLine + 1;
+                    if (curRow + 1 > dimensions.x)
+                        dimensions.x = curRow + 1;
                 }
                 else
                 {
