@@ -14,7 +14,7 @@ public abstract class Element
     public GameObject obj;                  // Element texture, this variable is set in the Unity Editor
 
     // Element specifications
-    public Vector2Int position;                 // Position of the element int the format Vector2(Line, Row)
+    private Vector2Int position;                 // Position of the element int the format Vector2(Line, Row)
     public ElementType type;                    // Specifies the element type (AND, OR, etc.)
 
     // I/O

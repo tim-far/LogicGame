@@ -10,7 +10,7 @@ public class LevelHandler : MonoBehaviour
     private static float gridScaleX;
     private static float gridScaleY;
 
-    public GameObject elementTexture;
+    private GameObject elementTexture;
     public Texture2D textureSize;
     public Material lineMaterial;
     public static Level currentLevel;
@@ -44,6 +44,7 @@ public class LevelHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //not implemented yet
     }
 
     void OnPostRender()
@@ -56,7 +57,7 @@ public class LevelHandler : MonoBehaviour
         return GetComponent<Camera>().ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0));
     }
 
-    void drawConnections(List<Element> elements)
+    static void drawConnections(List<Element> elements)
     {
         foreach (Element e in elements)
         {

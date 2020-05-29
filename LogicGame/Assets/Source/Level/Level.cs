@@ -51,9 +51,13 @@ public class Level
                         Debug.LogErrorFormat("'{0}' is not a valid element. in File '{1}', Line {2}", strCurrentElement, path, curLine);
                     }
                     if (curLine + 1 > dimensions.y)
+                    {
                         dimensions.y = curLine + 1;
+                    }
                     if (curRow + 1 > dimensions.x)
+                    {
                         dimensions.x = curRow + 1;
+                    }
                 }
                 else
                 {

@@ -61,7 +61,9 @@ public class ConnectionRenderer
             for (int n = 0; n < connection.waypoints.Count - 1; n++)
             {
                 foreach (var lineVert in createLineVertices(connection.waypoints[n], connection.waypoints[n + 1]))
+                {
                     GL.Vertex(lineVert);
+                }
             }
         }
 

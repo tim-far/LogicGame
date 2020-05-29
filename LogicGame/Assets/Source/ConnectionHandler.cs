@@ -65,7 +65,9 @@ public class ConnectionHandler
         for (int i = 0; i < connections.Count; i++)
         {
             if (connections[i].sourceIndex == sourceElementIndex && connections[i].targetIndex == targetElementIndex)
+            {
                 index = i;
+            }
         }
         return index;
     }

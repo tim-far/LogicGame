@@ -7,7 +7,7 @@ using TMPro;
 public class LevelSelector : MonoBehaviour
 {
     public GameObject levelHolder;
-    public GameObject levelIcon;
+    private GameObject levelIcon;
     public GameObject thisCanvas;
     public int numberOfLevels = 50;
     public Vector2 iconSpacing;
@@ -69,6 +69,6 @@ public class LevelSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //not implemented yet
     }
 }
