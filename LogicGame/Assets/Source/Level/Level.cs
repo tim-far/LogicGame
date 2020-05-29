@@ -38,11 +38,11 @@ public class Level
                     if (strCurrentElement == "AND")
                     {
                         // TODO: numInputs is currently hardcoded to 2
-                        this.elements.Add(new Element_And(new Vector2Int(curRow, lines.Length - curLine), new Vector3Int(targetX, targetY, targetInput), 2));
+                        this.elements.Add(new Element_And(new Vector2Int(curRow, lines.Length - (curLine + 1)), new Vector3Int(targetX, targetY, targetInput), 2));
                     }
                     else if (strCurrentElement == "OR")
                     {
-                        this.elements.Add(new Element_Or(new Vector2Int(curRow, lines.Length - curLine), new Vector3Int(targetX, targetY, targetInput), 2));
+                        this.elements.Add(new Element_Or(new Vector2Int(curRow, lines.Length - (curLine + 1)), new Vector3Int(targetX, targetY, targetInput), 2));
                     }
                     else
                     {

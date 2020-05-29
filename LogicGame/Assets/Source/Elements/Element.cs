@@ -15,13 +15,14 @@ public abstract class Element
 
     // Element specifications
     public Vector2Int position;                 // Position of the element int the format Vector2(Line, Row)
+    public Vector2Int realPosition;                 // Position of the element on display
     public ElementType type;                    // Specifies the element type (AND, OR, etc.)
 
     // I/O
     public int numInputs;                       // Number of inputs a given element has
     public List<bool> inputs;                   // List of all inputs (0 - numInputs)
     public bool output;                         // Every element can only have one output
-    public Vector3Int connectedTo;              // List of elements the output from the current element is connected to
+    public Vector3 connectedTo;              // List of elements the output from the current element is connected to
 
     // Member functions
     public abstract void computeOutput();       // Calculate output from inputs
