@@ -54,7 +54,31 @@ public class LevelHandler : MonoBehaviour
                     && Input.mousePosition.y < buttonPos.y + textureRect.height / 2
                     && Input.mousePosition.y > buttonPos.y - textureRect.height / 2)
                 {
-                    Debug.LogFormat("Clicked on button {0}", button.obj.name);
+                    button.inputs[0] = button.inputs[0] == true ? false : true;
+                    getElement(button.connectedTo).inputs[(int)button.connectedTo.z] = button.inputs[0];
+                    ConnectionHandler.setConnectionEnabled(button.inputs[0], button.position, button.connectedTo);
+                    updateConnections();
+                }
+            }
+        }
+    }
+
+    private void updateConnections()
+    {
+        foreach (var line in currentLevel.elements)
+        {
+            foreach (Element e in line)
+            {
+                e.computeOutput();
+
+                if (e.connectedTo == new Vector3(9, 9, 9))
+                {
+                    // SUCCESS BOX
+                }
+                else
+                {
+                    getElement(e.connectedTo).inputs[(int)e.connectedTo.z] = e.output;
+                    ConnectionHandler.setConnectionEnabled(e.output, e.position, e.connectedTo);
                 }
             }
         }

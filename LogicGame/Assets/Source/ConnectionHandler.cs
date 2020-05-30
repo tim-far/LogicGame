@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct Connection
+public class Connection
 {
     public Vector2 sourceIndex;
     public Vector2 targetIndex;
     public int targetInput;
+    public bool state;
     public List<Vector2> waypoints;
 }
 
@@ -14,7 +15,7 @@ public class ConnectionHandler
 {
     public static List<Connection> connections = new List<Connection>();
 
-    public static void addConnection(Element e)
+    public static void addConnection(Element e, bool isActive = false)
     {
         Element targetElement = LevelHandler.getElement(new Vector2(e.connectedTo.x, e.connectedTo.y));
         if (targetElement.numInputs == 10)
@@ -52,6 +53,7 @@ public class ConnectionHandler
         c.targetIndex = e.connectedTo;
         c.targetInput = (int)e.connectedTo.z;
         c.waypoints = new List<Vector2>();
+        c.state = isActive;
 
         c.waypoints.Add(source);
         c.waypoints.Add(wayPoint1);
@@ -61,14 +63,12 @@ public class ConnectionHandler
         connections.Add(c);
     }
 
-    public static int findConnection(Vector2 sourceElementIndex, Vector2 targetElementIndex)
+    public static void setConnectionEnabled(bool enabled, Vector2 sourceElementIndex, Vector2 targetElementIndex)
     {
-        int index = -1;
         for (int i = 0; i < connections.Count; i++)
         {
             if (connections[i].sourceIndex == sourceElementIndex && connections[i].targetIndex == targetElementIndex)
-                index = i;
+                connections[i].state = enabled;
         }
-        return index;
     }
 }
