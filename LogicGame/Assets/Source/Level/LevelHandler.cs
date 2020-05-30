@@ -56,26 +56,32 @@ public class LevelHandler : MonoBehaviour
         return GetComponent<Camera>().ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0));
     }
 
-    void drawConnections(List<Element> elements)
+    void drawConnections(List<List<Element>> elements)
     {
-        foreach (Element e in elements)
+        foreach (var line in elements)
         {
-            ConnectionHandler.addConnection(e);
+            foreach (Element e in line)
+            {
+                ConnectionHandler.addConnection(e);
 
-            Debug.LogFormat("Adding Connection from {0}", e.position);
+                Debug.LogFormat("Adding Connection from {0}", e.position);
+            }
         }
     }
 
-    void drawElements(List<Element> elements)
+    void drawElements(List<List<Element>> elements)
     {
-        foreach (Element e in elements)
+        foreach (var line in elements)
         {
-            e.obj = Instantiate(elementTexture) as GameObject;
-            e.obj.name = "element" + e.position.x + e.position.y;
+            foreach (Element e in line)
+            {
+                e.obj = Instantiate(elementTexture) as GameObject;
+                e.obj.name = "element" + e.position.x + e.position.y;
 
-            Vector2 position = screenToWorldPoint(calculateGridPos(e.position));
-            Debug.LogFormat("Drawing element {0}, {1}, {2}, {3}", e.obj.name, position, textureSize.width, textureSize.height);
-            e.obj.transform.position = position;
+                Vector2 position = screenToWorldPoint(calculateGridPos(e.position));
+                Debug.LogFormat("Drawing element {0}, {1}, {2}, {3}", e.obj.name, position, textureSize.width, textureSize.height);
+                e.obj.transform.position = position;
+            }
         }
     }
 
@@ -86,22 +92,11 @@ public class LevelHandler : MonoBehaviour
         return new Vector2(gridPositionX, gridPositionY);
     }
 
-    public static int getElementsAtY(int y)
-    {
-        int result = 0;
-        foreach (Element e in currentLevel.elements)
-        {
-            if (e.position.y == y)
-                result++;
-        }
-        return result;
-    }
-
     public static Element getElement(Vector2Int pos)
     {
-        foreach (Element e in currentLevel.elements)
+        foreach (Element e in currentLevel.elements[pos.y])
         {
-            if (e.position == pos)
+            if (e.position.x == pos.x)
                 return e;
         }
         return new Element_And(new Vector2Int(10, 10), new Vector3Int(10, 10, 10), 10);
