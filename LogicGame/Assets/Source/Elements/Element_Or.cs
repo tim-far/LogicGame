@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Element_Or : Element
 {
-    public Element_Or(Vector2Int position, Vector3Int connectedTo, int numInputs)
+    public Element_Or(Vector2 position, Vector3 connectedTo, int numInputs)
     {
         type = ElementType.ELEMENT_OR;
         this.position = position;

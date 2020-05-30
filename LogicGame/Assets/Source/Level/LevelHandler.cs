@@ -11,39 +11,53 @@ public class LevelHandler : MonoBehaviour
     private static float gridScaleY;
 
     public GameObject elementTexture;
-    public Texture2D textureSize;
+    public GameObject pushButton;
+    public GameObject successBox;
     public Material lineMaterial;
     public static Level currentLevel;
 
+    private List<Pushbutton> buttons;
     private ConnectionRenderer connectionRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (!textureSize)
-        {
-            Debug.LogError("Please set the textureSize Object first!");
-            return;
-        }
-        CrossSceneInfo.textureSize = textureSize;
+        buttons = new List<Pushbutton>();
 
         connectionRenderer = new ConnectionRenderer(lineMaterial);
 
         currentLevel = new Level();
         currentLevel.loadElementsFromFile(CrossSceneInfo.RequestedLevel);
         gridOffsetY = 0.05f * Screen.height;
-        gridOffsetX = 0.1f * Screen.width;
+        gridOffsetX = 0.12f * Screen.width;
         gridScaleX = Screen.width / Level.dimensions.x;
         gridScaleY = Screen.width / Level.dimensions.y;
 
         currentLevel.connectElements();
-        drawElements(currentLevel.elements);
-        drawConnections(currentLevel.elements);
+        drawElements();
+        drawPushbuttons();
+        addConnections();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            var textureRect = elementTexture.GetComponent<SpriteRenderer>().sprite.textureRect;
+            foreach (var button in buttons)
+            {
+                var buttonPos = worldToScreenPoint(button.obj.transform.position);
+                // Debug.LogFormat("Clicked at {2}; Button at {0} (Screenspace: {1})", buttonPos, button.obj.transform.position, Input.mousePosition);
+                if (Input.mousePosition.x > buttonPos.x - textureRect.width / 2
+                    && Input.mousePosition.x < buttonPos.x + textureRect.width / 2
+                    && Input.mousePosition.y < buttonPos.y + textureRect.height / 2
+                    && Input.mousePosition.y > buttonPos.y - textureRect.height / 2)
+                {
+                    Debug.LogFormat("Clicked on button {0}", button.obj.name);
+                }
+            }
+        }
     }
 
     void OnPostRender()
@@ -56,9 +70,14 @@ public class LevelHandler : MonoBehaviour
         return GetComponent<Camera>().ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0));
     }
 
-    void drawConnections(List<List<Element>> elements)
+    Vector2 worldToScreenPoint(Vector2 worldPos)
     {
-        foreach (var line in elements)
+        return GetComponent<Camera>().WorldToScreenPoint(worldPos);
+    }
+
+    void addConnections()
+    {
+        foreach (var line in currentLevel.elements)
         {
             foreach (Element e in line)
             {
@@ -69,9 +88,9 @@ public class LevelHandler : MonoBehaviour
         }
     }
 
-    void drawElements(List<List<Element>> elements)
+    void drawElements()
     {
-        foreach (var line in elements)
+        foreach (var line in currentLevel.elements)
         {
             foreach (Element e in line)
             {
@@ -79,25 +98,53 @@ public class LevelHandler : MonoBehaviour
                 e.obj.name = "element" + e.position.x + e.position.y;
 
                 Vector2 position = screenToWorldPoint(calculateGridPos(e.position));
-                Debug.LogFormat("Drawing element {0}, {1}, {2}, {3}", e.obj.name, position, textureSize.width, textureSize.height);
+                Debug.LogFormat("Drawing element {0}, {1}", e.obj.name, position);
                 e.obj.transform.position = position;
             }
         }
     }
 
-    public static Vector2 calculateGridPos(Vector2Int position)
+    public void drawPushbuttons()
+    {
+        foreach (Element e in currentLevel.elements[0])
+        {
+            for (int n = 0; n < e.numInputs; n++)
+            {
+                Pushbutton pb = new Pushbutton(new Vector2(e.position.x, -1), new Vector3(e.position.x, e.position.y, n));
+                var textureRect = e.obj.GetComponent<SpriteRenderer>().sprite.textureRect;
+
+                var targetInputs = getElement(pb.connectedTo).numInputs;
+                pb.position.x += 0.2f * (n < 1 ? -1 : 1);
+
+                var position = calculateGridPos(pb.position);
+
+                pb.obj = Instantiate(pushButton) as GameObject;
+                pb.obj.name = "pushButton" + pb.position.x + n;
+
+
+                pb.obj.transform.position = screenToWorldPoint(position);
+                ConnectionHandler.addConnection(pb);
+                buttons.Add(pb);
+            }
+        }
+    }
+
+    public static Vector2 calculateGridPos(Vector2 position)
     {
         float gridPositionX = gridOffsetX + position.x * gridScaleX;
         float gridPositionY = gridOffsetY + (position.y + 1) * gridScaleY;
         return new Vector2(gridPositionX, gridPositionY);
     }
 
-    public static Element getElement(Vector2Int pos)
+    public static Element getElement(Vector2 pos)
     {
-        foreach (Element e in currentLevel.elements[pos.y])
+        if (pos.y >= 0)
         {
-            if (e.position.x == pos.x)
-                return e;
+            foreach (Element e in currentLevel.elements[(int)pos.y])
+            {
+                if (e.position.x == pos.x)
+                    return e;
+            }
         }
         return new Element_And(new Vector2Int(10, 10), new Vector3Int(10, 10, 10), 10);
     }

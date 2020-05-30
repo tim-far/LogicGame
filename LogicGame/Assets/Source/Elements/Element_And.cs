@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Element_And : Element
 {
-    public Element_And(Vector2Int position, Vector3Int connectedTo, int numInputs)
+    public Element_And(Vector2 position, Vector3 connectedTo, int numInputs)
     {
         type = ElementType.ELEMENT_AND;
         this.position = position;

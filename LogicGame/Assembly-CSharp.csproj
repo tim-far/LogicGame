@@ -60,8 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ConnectionRenderer.cs" />
     <Compile Include="Assets\CrossSceneInfo.cs" />
-    <Compile Include="Assets\DrawLine.cs" />
     <Compile Include="Assets\Prefabs\LevelOnClick.cs" />
     <Compile Include="Assets\Prefabs\LevelSelector.cs" />
     <Compile Include="Assets\Prefabs\PageSwiper.cs" />
@@ -69,6 +69,7 @@
     <Compile Include="Assets\Source\Elements\Element.cs" />
     <Compile Include="Assets\Source\Elements\Element_And.cs" />
     <Compile Include="Assets\Source\Elements\Element_Or.cs" />
+    <Compile Include="Assets\Source\Elements\Element_Pushbutton.cs" />
     <Compile Include="Assets\Source\Level\Level.cs" />
     <Compile Include="Assets\Source\Level\LevelHandler.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

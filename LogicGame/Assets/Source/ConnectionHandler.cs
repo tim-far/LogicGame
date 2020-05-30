@@ -16,21 +16,23 @@ public class ConnectionHandler
 
     public static void addConnection(Element e)
     {
-        Element targetElement = LevelHandler.getElement(new Vector2Int(e.connectedTo.x, e.connectedTo.y));
+        Element targetElement = LevelHandler.getElement(new Vector2(e.connectedTo.x, e.connectedTo.y));
         if (targetElement.numInputs == 10)
         {
-            Debug.LogWarningFormat("Invalid Target Element at Position {0}", (Vector2Int)e.connectedTo);
+            Debug.LogWarningFormat("Skipping invalid element {0}", e.connectedTo);
             return;
         }
 
-        Vector2 target = LevelHandler.calculateGridPos((Vector2Int)e.connectedTo);
+        var textureRect = e.obj.GetComponent<SpriteRenderer>().sprite.textureRect;
+
+        Vector2 target = LevelHandler.calculateGridPos(e.connectedTo);
         Vector2 source = LevelHandler.calculateGridPos(e.position);
 
-        source.y += CrossSceneInfo.textureSize.height / 2;
-        target.y -= CrossSceneInfo.textureSize.height / 2;
+        source.y += textureRect.height / 2;
+        target.y -= textureRect.height / 2;
 
-        target.x -= CrossSceneInfo.textureSize.width / 2;
-        target.x += ((CrossSceneInfo.textureSize.width / 2) * ((e.connectedTo.z + 1) / targetElement.numInputs) + CrossSceneInfo.textureSize.width / 4);
+        target.x -= textureRect.width / 2;
+        target.x += (textureRect.width / 2) * ((e.connectedTo.z + 1) / targetElement.numInputs);
 
         // Make it fit into the openGL screenspace
         target.x /= Screen.width;
@@ -39,7 +41,7 @@ public class ConnectionHandler
         source.x /= Screen.width;
         source.y /= Screen.height;
 
-        float funcXVal = 2 * Mathf.Pow(Level.dimensions.x - e.position.x, 2) / Screen.height;
+        float funcXVal = 2 * Mathf.Pow(LevelHandler.currentLevel.elements[(int)source.y].Count - e.position.x, 2) / Screen.height;
         Vector2 wayPoint1 = new Vector2(source.x, source.y + funcXVal + (target.y - source.y) / 2.0f);
 
 
@@ -47,7 +49,7 @@ public class ConnectionHandler
 
         Connection c = new Connection();
         c.sourceIndex = e.position;
-        c.targetIndex = (Vector2Int)e.connectedTo;
+        c.targetIndex = e.connectedTo;
         c.targetInput = (int)e.connectedTo.z;
         c.waypoints = new List<Vector2>();
 
