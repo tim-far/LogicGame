@@ -15,16 +15,31 @@ public class ConnectionHandler
 {
     public static List<Connection> connections = new List<Connection>();
 
+    // compute the parth each connection line takes from one element to another
+    // a straight line wouldn't look nice so onlyorthoonal lines are used
+    // this is achieved by adding two middle points in each connection line to which both elements can connect orthogonally
+    // each point is represented by a 'X'
+    //
+    //  X (Line end)
+    //  *
+    //  *
+    //  X*******X (waypoint 1 & 2)
+    //          *
+    //          *
+    //          X (line start)
+    //
+    //
     public static void addConnection(Element e, bool isActive = false)
     {
         Element targetElement = LevelHandler.getElement(new Vector2(e.connectedTo.x, e.connectedTo.y));
+        // target element was not found
         if (targetElement.numInputs == 10)
         {
             Debug.LogWarningFormat("Skipping invalid element {0}", e.connectedTo);
             return;
         }
 
-        var textureRect = e.obj.GetComponent<SpriteRenderer>().sprite.textureRect;
+        var textureRect = targetElement.obj.GetComponent<SpriteRenderer>().sprite.textureRect;
 
         Vector2 target = LevelHandler.calculateGridPos(e.connectedTo);
         Vector2 source = LevelHandler.calculateGridPos(e.position);
@@ -33,7 +48,9 @@ public class ConnectionHandler
         target.y -= textureRect.height / 2;
 
         target.x -= textureRect.width / 2;
-        target.x += (textureRect.width / 2) * ((e.connectedTo.z + 1) / targetElement.numInputs);
+        float sectionSize = textureRect.width / targetElement.numInputs;
+        float currentSection = e.connectedTo.z;
+        target.x += currentSection * sectionSize + sectionSize / 2;
 
         // Make it fit into the openGL screenspace
         target.x /= Screen.width;
@@ -44,8 +61,6 @@ public class ConnectionHandler
 
         float funcXVal = 2 * Mathf.Pow(LevelHandler.currentLevel.elements[(int)source.y].Count - e.position.x, 2) / Screen.height;
         Vector2 wayPoint1 = new Vector2(source.x, source.y + funcXVal + (target.y - source.y) / 2.0f);
-
-
         Vector2 wayPoint2 = new Vector2(target.x, wayPoint1.y);
 
         Connection c = new Connection();

@@ -70,6 +70,7 @@
     <Compile Include="Assets\Source\Elements\Element_And.cs" />
     <Compile Include="Assets\Source\Elements\Element_Or.cs" />
     <Compile Include="Assets\Source\Elements\Element_Pushbutton.cs" />
+    <Compile Include="Assets\Source\Elements\Element_Successbox.cs" />
     <Compile Include="Assets\Source\Level\Level.cs" />
     <Compile Include="Assets\Source\Level\LevelHandler.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

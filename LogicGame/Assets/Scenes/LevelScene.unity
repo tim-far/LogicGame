@@ -202,8 +202,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elementTexture: {fileID: 1892324050}
-  pushButton: {fileID: 1892324050}
-  successBox: {fileID: 0}
+  pushButtonTexture: {fileID: 1892324050}
+  successBoxTexture: {fileID: 1892324050}
   lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!20 &519420031
 Camera:

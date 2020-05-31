@@ -6,7 +6,8 @@ public enum ElementType
 {
     ELEMENT_AND,
     ELEMENT_OR,
-    ELEMENT_PUSHBUTTON
+    ELEMENT_PUSHBUTTON,
+    ELEMENT_SUCCESSBOX
 }
 
 public abstract class Element
