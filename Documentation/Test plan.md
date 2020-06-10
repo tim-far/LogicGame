@@ -1,4 +1,4 @@
-﻿
+
 # Test plan
 
 ## 1.	Introduction
@@ -186,3 +186,8 @@ n/a
 | Have Unit Tests | 08.05.2020 | 08.05.2020 | 08.05.2020 | 08.05.2020 |
 | > 40% Test Coverage | 08.05.2020 | 08.05.2020 | 08.05.2020 | 08.05.2020 |
 | Iteration ends |  | |  | |
+
+## 12. Metrics
+We also implemented two different metrics in our code. The first one was done with Codacy and the second one with CodeClimate. Since we were happy that our code is running, we didn't want to implement these Metrics in our actual code. So we created another branch for it on github. [https://github.com/tim-far/LogicGame/tree/metrics](https://github.com/tim-far/LogicGame/tree/metrics)
+
+In our blog we explain what we implemented and why we didn't implement other stuff. Go check that out too: [https://logicgame775066249.wordpress.com/2020/05/29/metrics/](https://logicgame775066249.wordpress.com/2020/05/29/metrics/) You will find some screenshots of our implementations there as well.
