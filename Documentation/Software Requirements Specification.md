@@ -76,6 +76,21 @@ For this use case we also created a use case specification document. You can acc
 
 For this use case we also created a use case specification document. You can access it here: [https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20draw%20level%20selector.md](https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20draw%20level%20selector.md)
 
+###  3.1.4 exit game use case
+
+For this use case we also created a use case specification document. You can access it here:
+[https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20exit%20game.md](https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20exit%20game.md)
+
+###  3.1.5 main menu use case
+
+For this use case we also created a use case specification document. You can access it here:
+[https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20main%20menu.md](https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20main%20menu.md)
+
+###  3.1.6 play level use case
+
+For this use case we also created a use case specification document. You can access it here:
+[https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20play%20level.md](https://github.com/tim-far/LogicGame/blob/master/Documentation/UCS%20play%20level.md)
+
 ##   3.2 Usability
 
 We plan on designing the user interface as intuitive and self-explanatory as possible to make the user feel as comfortable as possible playing the game. Help documents will not be necessary.

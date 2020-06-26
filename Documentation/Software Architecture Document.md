@@ -78,3 +78,15 @@ tbd
 
 ## Implementation View
  n/a
+
+## Design Patterns
+
+Since we are a unity project our design patterns are a little bit more complicated and special.  
+We are explaining everything on our blog:
+[https://logicgame775066249.wordpress.com/2020/05/22/design-patterns/](https://logicgame775066249.wordpress.com/2020/05/22/design-patterns/)
+
+## Metrics
+
+Since we are a unity project our metrics are a little bit more complicated and special.  
+We are explaining everything on our blog:
+[https://logicgame775066249.wordpress.com/2020/05/29/metrics/](https://logicgame775066249.wordpress.com/2020/05/29/metrics/)
