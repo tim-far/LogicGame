@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ButtonHandler.cs" />
     <Compile Include="Assets\ConnectionRenderer.cs" />
     <Compile Include="Assets\CrossSceneInfo.cs" />
     <Compile Include="Assets\Prefabs\LevelOnClick.cs" />

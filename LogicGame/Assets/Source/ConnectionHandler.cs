@@ -59,8 +59,11 @@ public class ConnectionHandler
         source.x /= Screen.width;
         source.y /= Screen.height;
 
-        float funcXVal = 2 * Mathf.Pow(LevelHandler.currentLevel.elements[(int)source.y].Count - e.position.x, 2) / Screen.height;
-        Vector2 wayPoint1 = new Vector2(source.x, source.y + funcXVal + (target.y - source.y) / 2.0f);
+        // Verbindungshöhe bei Waypoint 1 Parabelförmig 6x^2 + offset
+        float xVal = e.position.x - LevelHandler.currentLevel.elements[(int)source.y].Count / 2;
+        float offset = (target.y - source.y) / 3;
+        float funcXVal = (6 * Mathf.Pow(xVal, 2) / Screen.height) + offset;
+        Vector2 wayPoint1 = new Vector2(source.x, source.y + funcXVal);
         Vector2 wayPoint2 = new Vector2(target.x, wayPoint1.y);
 
         Connection c = new Connection();

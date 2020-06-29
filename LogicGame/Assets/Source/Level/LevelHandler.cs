@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class LevelHandler : MonoBehaviour
@@ -10,11 +11,16 @@ public class LevelHandler : MonoBehaviour
     private static float gridScaleX;
     private static float gridScaleY;
 
-    public GameObject elementTexture;
+    public GameObject andTexture;
+    public GameObject orTexture;
     public GameObject pushButtonTexture;
     public GameObject successBoxTexture;
     public Material lineMaterial;
     public static Level currentLevel;
+    public Sprite buttonOff;
+    public Sprite buttonOn;
+    public Sprite successOn;
+    public Sprite successOff;
 
     private static Successbox successbox;
     private List<Pushbutton> buttons;
@@ -46,10 +52,10 @@ public class LevelHandler : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            var textureRect = elementTexture.GetComponent<SpriteRenderer>().sprite.textureRect;
+            var textureRect = buttons[0].obj.GetComponent<SpriteRenderer>().sprite.textureRect;
             foreach (var button in buttons)
             {
-                // check if one of the pushbuttins has been clicked and switch its state if yes
+                // check if one of the pushbuttons has been clicked and switch its state if yes
                 var buttonPos = worldToScreenPoint(button.obj.transform.position);
                 // Debug.LogFormat("Clicked at {2}; Button at {0} (Screenspace: {1})", buttonPos, button.obj.transform.position, Input.mousePosition);
                 if (Input.mousePosition.x > buttonPos.x - textureRect.width / 2
@@ -59,12 +65,22 @@ public class LevelHandler : MonoBehaviour
                 {
                     // swich input state and use it as the gates input
                     button.inputs[0] = button.inputs[0] == true ? false : true;
+
+                    button.obj.GetComponent<SpriteRenderer>().sprite = button.inputs[0] == true ? buttonOn : buttonOff;
+
                     // get the element the pushbuttin is connected to and set its input to the pushbuttin state
                     getElement(button.connectedTo).inputs[(int)button.connectedTo.z] = button.inputs[0];
                     // update the connection information for the renderer
                     ConnectionHandler.setConnectionEnabled(button.inputs[0], button.position, button.connectedTo);
                     // update all connections
                     updateConnections();
+
+                    // If level is won
+                    if(getElement(successbox.position).inputs[0] == true)
+                    {
+                        Debug.LogWarning("LEVEL WON!");
+                        SceneManager.LoadScene("LevelWonScene");
+                    }
                 }
             }
         }
@@ -113,7 +129,6 @@ public class LevelHandler : MonoBehaviour
                     // the placeholder needs to be removed and replaces with the actual successbox position
                     e.connectedTo = new Vector3(successbox.position.x, successbox.position.y, 0);
                     ConnectionHandler.addConnection(e);
-
                 }
                 else
                 {
@@ -129,7 +144,10 @@ public class LevelHandler : MonoBehaviour
         {
             foreach (Element e in line)
             {
-                e.obj = Instantiate(elementTexture) as GameObject;
+                if (e.type == ElementType.ELEMENT_AND)
+                    e.obj = Instantiate(andTexture) as GameObject;
+                else if (e.type == ElementType.ELEMENT_OR)
+                    e.obj = Instantiate(orTexture) as GameObject;
                 e.obj.name = "element" + e.position.x + e.position.y;
 
                 Vector2 position = screenToWorldPoint(calculateGridPos(e.position));
@@ -156,6 +174,7 @@ public class LevelHandler : MonoBehaviour
                 pb.obj = Instantiate(pushButtonTexture) as GameObject;
                 pb.obj.name = "pushButton" + pb.position.x + n;
 
+                
 
                 pb.obj.transform.position = screenToWorldPoint(position);
                 ConnectionHandler.addConnection(pb);

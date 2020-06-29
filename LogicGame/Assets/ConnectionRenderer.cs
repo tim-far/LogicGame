@@ -55,7 +55,7 @@ public class ConnectionRenderer
             if (connection.state == true)
                 GL.Color(Color.red);
             else
-                GL.Color(Color.white);
+                GL.Color(Color.black);
 
             if (connection.waypoints.Count % 4 != 0)
             {
