@@ -39,7 +39,9 @@ public class ConnectionHandler
             return;
         }
 
-        var textureRect = targetElement.obj.GetComponent<SpriteRenderer>().sprite.textureRect;
+        var textureRect = LevelHandler.currentLevel.elements[0][0].obj.GetComponent<SpriteRenderer>().sprite.textureRect;
+        textureRect.width *= 0.28f;
+        textureRect.height *= 0.28f;
 
         Vector2 target = LevelHandler.calculateGridPos(e.connectedTo);
         Vector2 source = LevelHandler.calculateGridPos(e.position);
@@ -47,6 +49,7 @@ public class ConnectionHandler
         source.y += textureRect.height / 2;
         target.y -= textureRect.height / 2;
 
+        // place the input correctly
         target.x -= textureRect.width / 2;
         float sectionSize = textureRect.width / targetElement.numInputs;
         float currentSection = e.connectedTo.z;
@@ -59,10 +62,10 @@ public class ConnectionHandler
         source.x /= Screen.width;
         source.y /= Screen.height;
 
-        // Verbindungshöhe bei Waypoint 1 Parabelförmig 6x^2 + offset
-        float xVal = e.position.x - LevelHandler.currentLevel.elements[(int)source.y].Count / 2;
-        float offset = (target.y - source.y) / 3;
-        float funcXVal = (6 * Mathf.Pow(xVal, 2) / Screen.height) + offset;
+        // Verbindungshöhe bei Waypoint 1 Parabelförmig 5x^2 + offset
+        float xVal = (2 * e.position.x - Level.dimensions.x) / 2;
+        float offset = (target.y - source.y) / 3.5f;
+        float funcXVal = (5 * Mathf.Pow(xVal, 2) / Screen.height) + offset;
         Vector2 wayPoint1 = new Vector2(source.x, source.y + funcXVal);
         Vector2 wayPoint2 = new Vector2(target.x, wayPoint1.y);
 

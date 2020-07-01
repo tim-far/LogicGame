@@ -13,7 +13,7 @@ public class LevelOnClick : MonoBehaviour
         b.onClick.AddListener(delegate ()
         {
             Debug.LogFormat("Load Level {0}", b.name);
-            CrossSceneInfo.RequestedLevel = "Assets/Levels/" + b.name + ".lvl";
+            CrossSceneInfo.levelTextFile = Resources.Load<TextAsset>(b.name);
             SceneManager.LoadScene("LevelScene");
         });
     }

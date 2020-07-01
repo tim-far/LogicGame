@@ -2,5 +2,5 @@
 
 public static class CrossSceneInfo
 {
-    public static string RequestedLevel = "Assets/Levels/lvl1.lvl";
+    public static TextAsset levelTextFile;
 };

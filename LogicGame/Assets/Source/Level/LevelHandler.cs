@@ -34,7 +34,7 @@ public class LevelHandler : MonoBehaviour
         connectionRenderer = new ConnectionRenderer(lineMaterial);
 
         currentLevel = new Level();
-        currentLevel.loadElementsFromFile(CrossSceneInfo.RequestedLevel);
+        currentLevel.loadElementsFromFile(CrossSceneInfo.levelTextFile);
         gridOffsetY = 0.05f * Screen.height;
         gridOffsetX = 0.12f * Screen.width;
         gridScaleX = Screen.width / Level.dimensions.x;
@@ -76,7 +76,7 @@ public class LevelHandler : MonoBehaviour
                     updateConnections();
 
                     // If level is won
-                    if(getElement(successbox.position).inputs[0] == true)
+                    if (getElement(successbox.position).inputs[0] == true)
                     {
                         Debug.LogWarning("LEVEL WON!");
                         SceneManager.LoadScene("LevelWonScene");
@@ -174,7 +174,7 @@ public class LevelHandler : MonoBehaviour
                 pb.obj = Instantiate(pushButtonTexture) as GameObject;
                 pb.obj.name = "pushButton" + pb.position.x + n;
 
-                
+
 
                 pb.obj.transform.position = screenToWorldPoint(position);
                 ConnectionHandler.addConnection(pb);
@@ -186,7 +186,7 @@ public class LevelHandler : MonoBehaviour
     public void drawSuccessbox()
     {
         Element e = currentLevel.elements[currentLevel.elements.Count - 1][0];
-        successbox = new Successbox(new Vector2(e.position.x, e.position.y + 1));
+        successbox = new Successbox(new Vector2(Level.dimensions.x / 2.0f, e.position.y + 1));
         successbox.obj = Instantiate(successBoxTexture) as GameObject;
         successbox.obj.name = "successbox";
         successbox.obj.transform.position = screenToWorldPoint(calculateGridPos(successbox.position));
@@ -194,7 +194,7 @@ public class LevelHandler : MonoBehaviour
 
     public static Vector2 calculateGridPos(Vector2 position)
     {
-        // translate the coordinated e.g. (1, 0) into a position on the screen in pixels e.g. (200, 0)
+        // translate the coordinates e.g. (1, 0) into a position on the screen in pixels e.g. (200, 0)
         float gridPositionX = gridOffsetX + position.x * gridScaleX;
         float gridPositionY = gridOffsetY + (position.y + 1) * gridScaleY;
         return new Vector2(gridPositionX, gridPositionY);

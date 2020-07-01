@@ -4,17 +4,21 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 using System;
 
+
+
 public class Level
 {
     public List<List<Element>> elements;
     public static Vector2 dimensions; // number of rows, std::max(elements in row, old)
 
-    public void loadElementsFromFile(string path)
+    public void loadElementsFromFile(TextAsset text)
     {
+        ConnectionHandler.connections.Clear();
+
         dimensions = new Vector2();
         elements = new List<List<Element>>();
         // Read The file into a String array
-        string[] lines = System.IO.File.ReadAllLines(path);
+        string[] lines = Regex.Split(text.text, "\r\n|\r|\n");
         Array.Reverse(lines); 
        
         // Loop through all file lines
@@ -51,7 +55,7 @@ public class Level
                     }
                     else
                     {
-                        Debug.LogErrorFormat("'{0}' is not a valid element. in File '{1}', Line {2}", strCurrentElement, path, currentLine);
+                        Debug.LogErrorFormat("'{0}' is not a valid element, Line {1}", strCurrentElement, currentLine);
                     }
                     if (currentLine + 1 > dimensions.y)
                         dimensions.y = currentLine + 1;
@@ -60,7 +64,7 @@ public class Level
                 }
                 else
                 {
-                    Debug.LogErrorFormat("Unknown element format: '{0}' in File '{1}', Line {2}", strLineElements[currentColumn], path, currentLine);
+                    Debug.LogErrorFormat("Unknown element format: '{0}', Line {1}", strLineElements[currentColumn], currentLine);
                 }
             }
 
